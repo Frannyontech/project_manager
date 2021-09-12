@@ -1,0 +1,17 @@
+<% if @project.errors.any?%>
+<div id="error_explanation" class="mt-5">
+
+    <h2><%= pluralize(@project.errors.count, "error") %>
+            prohibited this post from being saved:
+    </h2>
+    <ul>
+        <% @project.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
+        <%end%>
+    </ul>
+</div>
+<% else%>
+        <h1>Proyecto ingresado exitosamente</h1>
+<%end%>
+<%= link_to 'Crear nuevo proyecto', form_search_path %> 
+<%end%>
